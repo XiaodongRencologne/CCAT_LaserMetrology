@@ -1,4 +1,4 @@
-from coordinate import coord_sys
+from CCAT_LaserMetrology.MM_HoloPy.coordinate import coord_sys
 from surface import PolySurf
 import json, os
 

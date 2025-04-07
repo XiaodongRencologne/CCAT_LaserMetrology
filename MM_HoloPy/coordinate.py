@@ -13,15 +13,15 @@ class _global_coord_sys():
         self.mat_l_r=np.eye(3)
     def Local_to_Ref(self,x,y,z):
         return x,y,z
-    def _toLocal_coord(self,x,y,z):
+    def Ref_to_Local(self,x,y,z):
         return x,y,z
-    def _toGlobal_coord(self,x,y,z):
+    def Local_to_Global(self,x,y,z):
         return x,y,z
-    def Global_to_local(self,x,y,z):
+    def Global_to_Local(self,x,y,z):
         return x,y,z
-    def _toSpherical(self,x,y,z):
+    def ToSpherical(self,x,y,z):
         return cartesian2spherical(x,y,z)  
-    def _toCylinder(self,x,y,z):
+    def ToCylinder(self,x,y,z):
         return cartesian2cylinder(x,y,z)
     
 global_coord=_global_coord_sys()
@@ -34,7 +34,11 @@ class coord_sys():
     the reference coord, roation angles 'angle=[0,0,0]' and rotating axes 'xyz' based on euler angles.
     The default reference coord is pre-defined global coordinate system.
     '''
-    def __init__(self,origin,angle,axes='xyz',ref_coord=global_coord):
+    def __init__(self,
+                 origin,
+                 angle,
+                 axes='xyz',
+                 ref_coord=global_coord):
         self.origin=np.array(origin).reshape(3,1)
 
         self.mat_r_l=euler2mat(angle[0],angle[1],angle[2],axes=axes)
