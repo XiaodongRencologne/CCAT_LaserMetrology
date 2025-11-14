@@ -1,7 +1,7 @@
 # %%
 import numpy as np;
 import copy
-from transform import euler2mat, cartesian2spherical, cartesian2cylinder
+from .transform import euler2mat, cartesian2spherical, cartesian2cylinder
 
 # %%
 class _global_coord_sys():
@@ -36,13 +36,20 @@ class coord_sys():
     '''
     def __init__(self,
                  origin,
-                 angle,
+                 angle = None,
                  axes='xyz',
+                 rotation_matrix = None,
                  ref_coord=global_coord):
+        '''
+        mat_r_l: convert coordinates of a point in reference coordiante frame to local coordinates system.
+        mat_g_l: global to local
+        '''
         self.origin=np.array(origin).reshape(3,1)
-
-        self.mat_r_l=euler2mat(angle[0],angle[1],angle[2],axes=axes)
-        self.mat_l_r=np.transpose(self.mat_r_l)
+        if rotation_matrix == None:
+            self.mat_l_r = euler2mat(angle[0],angle[1],angle[2],axes=axes)
+        else:
+            self.mat_l_r = rotation_matrix
+        self.mat_r_l=np.transpose(self.mat_l_r)
         self.mat_l_g=np.matmul(ref_coord.mat_l_g,self.mat_l_r)
         self.mat_g_l=np.transpose(self.mat_l_g)
 

@@ -1,6 +1,6 @@
 # %%
 import numpy as np
-from Gauss_L_quadr import Gauss_L_quadrs2d,Gauss_L_quadrs1d,Guass_L_quadrs_Circ
+from .Gauss_L_quadr import Gauss_L_quadrs2d,Gauss_L_quadrs1d,Guass_L_quadrs_Circ
 import matplotlib.pyplot as plt
 
 # %%
@@ -133,6 +133,7 @@ class Table_rect_rim():
             return False
 
 # %%
+'''
 C_list=np.array([[-15,0,20],
         [0,0,0]])
 A_list=[20,10,30]
@@ -152,3 +153,4 @@ plt.plot(XX,YY,'*')
 # %%
 fig=plt.figure(figsize=(6,6))
 plt.plot(XX1,YY1,'*')
+'''

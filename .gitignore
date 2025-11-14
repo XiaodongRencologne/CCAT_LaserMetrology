@@ -1,0 +1,5 @@
+# ingore h5 file and pt file
+#*.h5
+#*.pt
+# ingore directory
+MM_HoloPy/

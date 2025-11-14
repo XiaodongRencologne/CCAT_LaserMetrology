@@ -510,6 +510,10 @@
                 0
             ],
             "rotation_axis": "xyz"
+        },
+        "adjuster_config": {
+            "p": 200,
+            "q": 200
         }
     },
     "M1": {
@@ -1054,6 +1058,10 @@
                 0
             ],
             "rotation_axis": "xyz"
+        },
+        "adjuster_config": {
+            "p": 200,
+            "q": 200
         }
     }
 }

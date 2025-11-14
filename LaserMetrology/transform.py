@@ -3,7 +3,9 @@ import numpy as np
 #### coordinates points transform.
 def euler2mat(ai,al,ak,axes='xyz'):
     '''
-    Calculate coordinate transform matrix based on eular angles
+    Calculate coordinate transform matrix based on eular angles. 
+    #The resutling matrix multiped by the coordinates in reference coordinate system
+    #gives the coordinates of the points in the new coordinates system. The 3D rotation matrix is the transpose of the matrix. 
     '''
     angle=[ai,al,ak]
 
@@ -16,7 +18,7 @@ def euler2mat(ai,al,ak,axes='xyz'):
     for n in axes:
         M=np.matmul(axis[n](angle[i]),M) 
         i+=1
-    return M
+    return np.transpose(M)
 
 def cartesian2spherical(x,y,z):
     '''
