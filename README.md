@@ -3,7 +3,7 @@ In the package, FYST_Antenna.Antenna is the pre-defined FYST geometry model.
 * 1. FYST is made of reflectors (M2 and M1) that are defined by the class of **FYST_Antenna.reflector()**.
 * 2. M2 and M1 are made of panels, class of **FYST_Antenna.Rect_panel()**.
 * 3. The configuration of the FYST model is wroten the FILE 'Antenna_confi/FYST_config.json'
-<details>
+
 <summary>Click to expand JSON structure</summary>
 
 ```json
@@ -33,8 +33,7 @@ In the package, FYST_Antenna.Antenna is the pre-defined FYST geometry model.
     }
   }
 }
-
-</details>```          
+         
 
 
 ```python
