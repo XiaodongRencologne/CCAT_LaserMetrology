@@ -12,7 +12,7 @@ In the package, FYST_Antenna.Antenna is the pre-defined FYST geometry model.
         "panels": {
             "12391": [2804.8,-1423.4,700,710],
             "12491": [2804.8,-712.2,700,710],
-        }
+        },
         "PolySurf": [[]],
         "coor_sys": {
             "origin": [0,-4800,0],
