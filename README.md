@@ -8,31 +8,33 @@ In the package, FYST_Antenna.Antenna is the pre-defined FYST geometry model.
 
 ```json
 {
-    "M2": {
-        "panels": {
-            "12391": [2804.8,-1423.4,700,710],
-            "12491": [2804.8,-712.2,700,710],
-        },
-        "PolySurf": [[]],
-        "coor_sys": {
-            "origin": [0,-4800,0],
-            "rotation_angle": [-1.2490457723982542,0,0],
-            "rotation_axis": "xyz"
-        },
+  "M2": {
+    "panels": {
+      "12391": [2804.8, -1423.4, 700, 710],
+      "12491": [2804.8, -712.2, 700, 710]
     },
-    "M1": {
-        "panels": {
-            "11211": [2684.8,-2218.6,670,750],
-            "11311": [2684.8,-1467.4,670,750]},
-        "PolySurf": [[]],
-        "coor_sys": {
-            "origin": [0,-4800,0],
-            "rotation_angle": [-1.2490457723982542,0,0],
-            "rotation_axis": "xyz"
-        },
+    "PolySurf": [[]],
+    "coor_sys": {
+      "origin": [0, -4800, 0],
+      "rotation_angle": [-1.2490457723982542, 0, 0],
+      "rotation_axis": "xyz"
     }
+  },
+  "M1": {
+    "panels": {
+      "11211": [2684.8, -2218.6, 670, 750],
+      "11311": [2684.8, -1467.4, 670, 750]
+    },
+    "PolySurf": [[]],
+    "coor_sys": {
+      "origin": [0, -4800, 0],
+      "rotation_angle": [-1.2490457723982542, 0, 0],
+      "rotation_axis": "xyz"
+    }
+  }
 }
-</details>          
+
+</details>```          
 
 
 ```python
