@@ -32,8 +32,7 @@ In the package, FYST_Antenna.Antenna is the pre-defined FYST geometry model.
         },
     }
 }
-
-            
+</details>          
 
 
 ```python
