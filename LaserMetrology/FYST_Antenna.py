@@ -24,6 +24,10 @@ class Antenna():
         M1_config = config_data['M1']
         self.M2 = reflector(M2_config)
         self.M1 = reflector(M1_config)
+    
+    def Offset_surface(self,Offset):
+        self.M2.surface._create_offset_surface(Offset)
+        self.M1.surface._create_offset_surface(-Offset)
 
 class reflector:
     def __init__(self,
@@ -33,12 +37,11 @@ class reflector:
         self.coord_sys =  coord_sys(Reflector_Config['coor_sys']['origin'],
                                     angle = Reflector_Config['coor_sys']['rotation_angle'],
                                     axes = Reflector_Config['coor_sys']['rotation_axis'])
-        
+
         self.panels = {panel_name: Rect_panel(Reflector_Config['panels'][panel_name],
                                               self.coord_sys,self.surface,
                                               Reflector_Config['adjuster_config']['p'],
                                               Reflector_Config['adjuster_config']['q']) for panel_name in Reflector_Config['panels']}
-
 class Rect_panel:
     def __init__(self,
                  panel_config,
@@ -107,14 +110,15 @@ class Rect_panel:
         return a, b,c,d,e
     
     def To_adjuster_position_Method2(self,
-                                     Meas_data,
-                                     Offset = 0):
+                                     Meas_data):
         p = self.p
         q = self.q
 
-        self.surface._create_offset_surface(Offset)
-
+        #self.surface._create_offset_surface(Offset)
+        Offset = self.surface.Offset
+        
         z0 = self.surface.surface_offset(Meas_data[:,0].ravel(),Meas_data[:,1].ravel(),grid = False)
+        Offset = self.surface.Offset
         nx,ny,nz,N = self.surface.normal_vector(self.center[0],self.center[1])
         dr = (Meas_data[:,2].ravel() - z0.ravel())*np.abs(nz)
 
@@ -137,6 +141,11 @@ class Rect_panel:
         v3 = a + b * p + c * q + d * p * q + e * (p**2 + q**2)
         v4 = a + b * p - c * q - d * p * q + e * (p**2 + q**2)
         v5 = a
-        print(v1*1000,v2*1000,v3*1000,v4*1000,v5*1000)
-        return a, b,c,d,e
+        print(f'v1: {v1*1000}um')
+        print(f'v2: {v2*1000}um')
+        print(f'v3: {v3*1000}um')
+        print(f'v4: {v4*1000}um')
+        print(f'v5: {v5*1000}um')
+
+        return a, b,c,d,e #v1,v2,v3,v4,v5#
 

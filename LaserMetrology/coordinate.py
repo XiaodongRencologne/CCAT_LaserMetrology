@@ -11,13 +11,13 @@ class _global_coord_sys():
         self.mat_l_g=np.eye(3)
         self.mat_r_l=np.eye(3)
         self.mat_l_r=np.eye(3)
-    def Local_to_Ref(self,x,y,z):
+    def Local_to_Ref(self,x,y,z,Vector=False):
         return x,y,z
-    def Ref_to_Local(self,x,y,z):
+    def Ref_to_Local(self,x,y,z,Vector=False):
         return x,y,z
-    def Local_to_Global(self,x,y,z):
+    def Local_to_Global(self,x,y,z,Vector=False):
         return x,y,z
-    def Global_to_Local(self,x,y,z):
+    def Global_to_Local(self,x,y,z,Vector=False):
         return x,y,z
     def ToSpherical(self,x,y,z):
         return cartesian2spherical(x,y,z)  

@@ -100,6 +100,7 @@ class PolySurf():
     
     def _create_offset_surface(self,Offset,Nx = 201,Ny =201):
         '''create a surface file with an offset along the normal vector direction'''
+        self.Offset = Offset
         x0=-self.R *1.1
         x1=self.R *1.1
         y0=-self.R *1.1
