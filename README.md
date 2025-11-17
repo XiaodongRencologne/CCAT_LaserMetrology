@@ -1,10 +1,19 @@
-### Tools to process Laser Metrology Measured surface
-In the package, FYST_Antenna.Antenna is the pre-defined FYST geometry model.
-* 1. FYST is made of reflectors (M2 and M1) that are defined by the class of **FYST_Antenna.reflector()**.
-* 2. M2 and M1 are made of panels, class of **FYST_Antenna.Rect_panel()**.
-* 3. The configuration of the FYST model is wroten the FILE 'Antenna_confi/FYST_config.json'
+### Tools for Processing Laser Metrology–Measured Surfaces and Converting Panel Surface Distortions into Adjuster Movements
+FYST_Antenna.Antenna is the pre-defined FYST geometry model.
 
-<summary>Click to expand JSON structure</summary>
+
+         
+
+
+```python
+## FYST model is pre-defined.
+import numpy as np  
+from LaserMetrology import Antenna
+FYST = Antenna()
+```
+
+*  The configuration of the FYST model is wroten the FILE 'Antenna_confi/FYST_config.json'
+
 
 ```json
 {
@@ -33,15 +42,6 @@ In the package, FYST_Antenna.Antenna is the pre-defined FYST geometry model.
     }
   }
 }
-```
-         
-
-
-```python
-## FYST model is pre-defined.
-import numpy as np  
-from LaserMetrology import Antenna
-FYST = Antenna()
 ```
 
 Define the coordinate system in which the surface points measured by the laser metrology system are expressed.
