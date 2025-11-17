@@ -9,7 +9,7 @@ from LaserMetrology import Antenna
 FYST = Antenna()
 ```
 
-*  The configuration of the FYST model is wroten the FILE 'Antenna_confi/FYST_config.json'
+*  The configuration of the FYST model is wroten the FILE 'LaserMetrology/Antenna_confi/FYST_config.json'
 
 
 ```json
